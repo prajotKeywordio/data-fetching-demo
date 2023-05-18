@@ -2,13 +2,13 @@ import React from "react";
 // MUI imports
 import { Box, Container, Typography } from "@mui/material";
 // Component imports
-import { Post } from "../../Components/Post";
-import { Loader } from "../../Components/Loader";
-import { Error } from "../../Components/Error";
+import { Post } from "./components/Post";
+import { Loader } from "../../components/Loader";
+import { Error } from "../../components/Error";
 // utility imports
 import { colorPicker } from "./utils";
 // service imports
-import { useGetPostsQuery } from "../../services/RTK/post";
+import { useGetPostsQuery } from "./api/getPostsRTK";
 
 const Posts = () => {
   const { data, isLoading, isError, isSuccess } = useGetPostsQuery();

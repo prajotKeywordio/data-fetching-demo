@@ -1,5 +1,5 @@
 import React from "react";
-import { Posts } from "./pages/posts";
+import { Posts } from "./features/posts";
 
 function App() {
   return (
