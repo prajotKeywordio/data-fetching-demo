@@ -1,6 +1,4 @@
 import React from "react";
-// MUI imports
-import { Box, Container, Typography } from "@mui/material";
 // Component imports
 import { Post } from "./components/Post";
 import { Loader } from "../../components/Loader";
@@ -9,6 +7,9 @@ import { Error } from "../../components/Error";
 import { colorPicker } from "./utils";
 // service imports
 import { useGetPostsQuery } from "./api/getPostsRTK";
+import { Heading } from "../../components/Heading";
+import { LayoutContainer } from "../../components/LayoutContainer/styles";
+import { Grid } from "./components/Grid";
 
 const Posts = () => {
   const { data, isLoading, isError, isSuccess } = useGetPostsQuery();
@@ -23,19 +24,9 @@ const Posts = () => {
 
   if (isSuccess) {
     return (
-      <Container sx={{ paddingTop: "2.75rem", paddingBottom: "2.75rem" }}>
-        {/* heading */}
-        <Typography variant="h1" sx={{ mb: "1.5rem" }}>
-          Posts
-        </Typography>
-
-        <Box
-          sx={{
-            display: "grid",
-            gap: "1rem",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-          }}
-        >
+      <LayoutContainer>
+        <Heading> Posts</Heading>
+        <Grid>
           {data.map((post) => (
             <Post
               key={post.id}
@@ -44,8 +35,8 @@ const Posts = () => {
               color={colorPicker(post.id)}
             />
           ))}
-        </Box>
-      </Container>
+        </Grid>
+      </LayoutContainer>
     );
   }
   return <Loader />;
