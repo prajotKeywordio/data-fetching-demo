@@ -1,11 +1,11 @@
 import React from "react";
-import { HomeIcon } from "../HomeIcon";
 import { Body, Wrapper, Title } from "./styles";
+import { Icon } from "../Icon";
 
 const Post = ({ title, body, color }) => {
   return (
     <Wrapper>
-      <HomeIcon color={color} />
+      <Icon color={color} />
       <Title>{title}</Title>
       <Body>{body}</Body>
     </Wrapper>

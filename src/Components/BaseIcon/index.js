@@ -1,8 +1,7 @@
-import { HomeOutlined } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import React from "react";
 
-const HomeIcon = ({color = 'blue'}) => {
+const BaseIcon = ({Icon, color = 'blue'}) => {
   return (
     <Box
       sx={{
@@ -15,7 +14,7 @@ const HomeIcon = ({color = 'blue'}) => {
         width: '24px',
       }}
     >
-      <HomeOutlined
+      <Icon
         sx={{
           color: `${color}.main`,
           fontSize: '18px',
@@ -25,4 +24,4 @@ const HomeIcon = ({color = 'blue'}) => {
   );
 };
 
-export { HomeIcon };
+export { BaseIcon };
