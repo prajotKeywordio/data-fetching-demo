@@ -1,9 +1,12 @@
 import React from "react";
-import { Posts } from "./features/posts";
+import { BrowserRouter } from "react-router-dom";
+import { OpenRoutes } from "./routes";
 
 function App() {
   return (
-    <Posts/>
+    <BrowserRouter>
+      <OpenRoutes />
+    </BrowserRouter>
   );
 }
 
